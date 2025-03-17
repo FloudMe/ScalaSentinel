@@ -1,3 +1,6 @@
 package pl.scalasentinel.collector.twitter.model
 
-case class Tweet(id: String, text: String)
+case class Tweet(
+  id: String,
+  text: String
+)

@@ -22,7 +22,10 @@ lazy val collector = (project in file("modules/collector"))
       "ch.qos.logback" % "logback-classic" % "1.5.17",
       "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
       "com.typesafe.akka" %% "akka-stream-testkit" % "2.8.8" % Test,
-      "com.typesafe.akka" %% "akka-http-testkit" % "10.5.3" % Test
+      "com.typesafe.akka" %% "akka-http-testkit" % "10.5.3" % Test,
+      "com.typesafe.akka" %% "akka-actor-testkit-typed" % "2.8.8" % Test,
+      "org.mockito" % "mockito-core" % "5.16.1" % Test,
+      "org.scalatest" %% "scalatest" % "3.2.19" % Test
     )
   )
 
