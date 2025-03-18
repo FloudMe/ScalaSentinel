@@ -1,4 +1,5 @@
 import scala.Console.in
+
 ThisBuild / scalaVersion := "2.13.16"
 
 lazy val commonSettings = Seq(
@@ -18,9 +19,11 @@ lazy val collector = (project in file("modules/collector"))
       "com.typesafe.akka" %% "akka-http" % "10.5.3",
       "com.typesafe.akka" %% "akka-stream" % "2.8.8",
       "com.typesafe.akka" %% "akka-stream-kafka" % "4.0.2",
-      "io.spray" %%  "spray-json" % "1.3.6",
+      "io.spray" %% "spray-json" % "1.3.6",
       "ch.qos.logback" % "logback-classic" % "1.5.17",
       "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
+      "com.typesafe.akka" %% "akka-stream-kafka" % "4.0.2",
+      "org.apache.kafka" % "kafka-clients" % "3.9.0",
       "com.typesafe.akka" %% "akka-stream-testkit" % "2.8.8" % Test,
       "com.typesafe.akka" %% "akka-http-testkit" % "10.5.3" % Test,
       "com.typesafe.akka" %% "akka-actor-testkit-typed" % "2.8.8" % Test,
@@ -73,7 +76,7 @@ lazy val collector = (project in file("modules/collector"))
 //  )
 
 lazy val root = (project in file("."))
-  .aggregate(collector/*, analyzer, storage, alert, gateway*/)
+  .aggregate(collector /*, analyzer, storage, alert, gateway*/)
   .settings(
     name := "ScalaSentinel",
     publish / skip := true
